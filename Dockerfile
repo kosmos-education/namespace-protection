@@ -1,3 +1,4 @@
+LABEL org.opencontainers.image.source https://github.com/kosmos-education/namespace-protection
 FROM golang:1.22-alpine AS build
 
 WORKDIR /webhook
