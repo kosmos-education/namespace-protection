@@ -1,13 +1,13 @@
 replicaCount: 1
 
 image:
-  repository: mochacoffee/namespace-protection
+  repository: ghcr.io/kosmos-education/namespace-protection
   pullPolicy: Always
-  tag: v1.0.0
+  tag: v1.0.1
 
 webhook:
   rejectionMessage: "This namespace is protected against deletion"
-  annotationName: "protect-deletion"
+  annotationName: "kosmos-education.io/protected"
 
 resources: {}
 nodeSelector: {}

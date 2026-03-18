@@ -70,8 +70,8 @@ func Validate(w http.ResponseWriter, r *http.Request) {
 	}
 
 	rejectionMessage, _ := os.LookupEnv("WEBHOOK_REJECTION_MESSAGE")
-	progtectionAnnotation, _ := os.LookupEnv("WEBHOOK_ANNOTATION")
-	if ns.Metadata.Annotations[progtectionAnnotation] == "true" {
+	protectionAnnotation, _ := os.LookupEnv("WEBHOOK_ANNOTATION")
+	if ns.Metadata.Annotations[protectionAnnotation] == "true" {
 		arReview.Response.Allowed = false
 		arReview.Response.Result = &metav1.Status{
 			Message: rejectionMessage,
