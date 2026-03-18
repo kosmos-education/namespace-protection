@@ -1,4 +1,3 @@
-LABEL org.opencontainers.image.source https://github.com/kosmos-education/namespace-protection
 FROM golang:1.22-alpine AS build
 
 WORKDIR /webhook
@@ -9,6 +8,7 @@ RUN apk --no-cache add build-base gcc && \
     GO111MODULE=on CGO_ENABLED=0 GOOS=linux go build -o main
 
 FROM alpine:3.20
+LABEL org.opencontainers.image.source https://github.com/kosmos-education/namespace-protection
 
 COPY --from=build /webhook/main .
 COPY --from=build /etc/passwd /etc/passwd
