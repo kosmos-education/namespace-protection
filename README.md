@@ -22,6 +22,6 @@ Add the following annotation to the namespace:
 ```yaml
 metadata:
   annotations:
-    protect-deletion: "true"
+    kosmos-education.io/protected: "true"
 ```
 
